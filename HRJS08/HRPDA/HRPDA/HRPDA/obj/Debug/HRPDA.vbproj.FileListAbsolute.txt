@@ -1,0 +1,37 @@
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\bin\Debug\HRPDA.exe
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\bin\Debug\HRPDA.pdb
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\bin\Debug\HRPDA.xml
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\obj\Debug\HRPDA.FormMain.resources
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\obj\Debug\HRPDA.FormMenu.resources
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\obj\Debug\HRPDA.Resources.resources
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\obj\Debug\HRPDA.vbproj.GenerateResource.Cache
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\obj\Debug\HRPDA.exe
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\obj\Debug\HRPDA.xml
+C:\Users\Administrator\AppData\Local\Temporary Projects\HRPDA\obj\Debug\HRPDA.pdb
+D:\华日金属\HRPDA\HRPDA\bin\Debug\HRPDA.exe
+D:\华日金属\HRPDA\HRPDA\bin\Debug\HRPDA.pdb
+D:\华日金属\HRPDA\HRPDA\bin\Debug\HRPDA.xml
+D:\华日金属\HRPDA\HRPDA\obj\Debug\ResolveAssemblyReference.cache
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.FormMain.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.FormMenu.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.Resources.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.vbproj.GenerateResource.Cache
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.exe
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.xml
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.pdb
+D:\华日金属\HRPDA\HRPDA\bin\Debug\System.Data.SqlClient.dll
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.FormConfig.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.Form入库菜单.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.Form出库菜单.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.Form盘点菜单.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F原材料入库.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F原材料出库.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F原材料盘点.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F半成品入库.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F半成品出库.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F半成品盘点.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F成品入库.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F成品出库.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F成品盘点.resources
+D:\华日金属\HRPDA\HRPDA\obj\Debug\HRPDA.F返品入库.resources

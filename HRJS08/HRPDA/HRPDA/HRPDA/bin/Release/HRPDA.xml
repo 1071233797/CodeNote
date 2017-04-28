@@ -1,0 +1,132 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+HRPDA
+</name>
+</assembly>
+<members>
+<member name="E:HRPDA.TCPClient.ClientConnected">
+	<summary>
+ 客户端联接事件
+ </summary>
+	<remarks></remarks>
+</member><member name="E:HRPDA.TCPClient.ClientClosed">
+	<summary>
+ 客户端断开事件
+ </summary>
+	<remarks></remarks>
+</member><member name="E:HRPDA.TCPClient.DataArrived">
+	<summary>
+ 接收到的数据
+ </summary>
+	<param name="value">数据</param>
+	<remarks></remarks>
+</member><member name="E:HRPDA.TCPClient.Exception">
+	<summary>
+ 异常数据
+ </summary>
+	<param name="ex"></param>
+	<remarks></remarks>
+</member><member name="P:HRPDA.TCPClient.Connected">
+	<summary>
+ 是否已经连接
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HRPDA.TCPClient.LocalHostName">
+	<summary>
+ 本地计算机名
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HRPDA.TCPClient.LocalIP">
+	<summary>
+ 本地计算机IP
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HRPDA.TCPClient.LocalPort">
+	<summary>
+ 本地计算机端口
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HRPDA.TCPClient.RemoteIP">
+	<summary>
+ 远程计算机IP
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HRPDA.TCPClient.IsCStop">
+	<summary>
+ 远程计算机端口
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:HRPDA.TCPClient.#ctor(System.String,System.String,System.Int32,System.Int32)">
+	<summary>
+ 实例　TCPServer
+ </summary>
+	<param name="RemoteIP">远程IP</param>
+	<param name="Port">侦听客户端联接的端口号</param>
+	<param name="RecvMax">接收缓冲区大小</param>
+	<param name="RecvSleep">接收线程睡眠时间</param>
+	<remarks></remarks>
+</member><member name="M:HRPDA.TCPClient.ReceiveCallBack(System.IAsyncResult)">
+	<summary>
+ socket异步接收回调函数
+ </summary>
+	<param name="ar"></param>
+	<remarks></remarks>
+</member><member name="M:HRPDA.TCPClient.Close">
+	<summary>
+ 关闭客户端连接
+ </summary>
+	<remarks></remarks>
+</member><member name="M:HRPDA.TCPClient.SendData(System.Byte[])">
+	<summary>
+ 实例　TCPServer
+ </summary>
+	<param name="value">发送数据</param>
+	<remarks></remarks>
+</member><member name="T:HRPDA.TCPClient.SocketAndBuffer">
+	<summary>
+ 异步操作socket缓冲类
+ </summary>
+	<remarks></remarks>
+</member><member name="M:HRPDA.TCXml.createXML(System.String)">
+	<summary>
+ 创建XML文件
+ </summary>
+	<param name="xmlFileName">要创建的XML文件名</param>
+	<remarks></remarks>
+</member><member name="M:HRPDA.TCXml.readXMl(System.String)">
+	<summary>
+ 读取xml
+ </summary>
+	<param name="xmlNodeName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HRPDA.My.Resources.Resources.ResourceManager">
+	<summary>
+   Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:HRPDA.My.Resources.Resources.Culture">
+	<summary>
+   Overrides the current thread's CurrentUICulture property for all
+   resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:HRPDA.My.Resources.Resources">
+	<summary>
+   A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

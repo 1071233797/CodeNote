@@ -1,0 +1,816 @@
+﻿Imports HRJS.Constant
+Imports UserControl
+Imports System.IO
+Imports Infragistics.Win.UltraWinGrid
+
+Public Class frm模具一览
+#Region "变量定义"
+    Private mDtSearch As DataTable = Nothing
+    Private Z_ReturnTable As DataTable = Nothing
+    Private mstr模具编号 As String = String.Empty
+    Private mstr模具名称 As String = String.Empty
+    Dim strServerPicturePath As String = System.Configuration.ConfigurationManager.AppSettings.Get("MouldPath")
+    Public Property 模具编号() As String
+        Get
+            Return mstr模具编号
+        End Get
+        Set(ByVal Value As String)
+            mstr模具编号 = Value
+        End Set
+    End Property
+
+    Public Property 模具名称() As String
+        Get
+            Return mstr模具名称
+        End Get
+        Set(ByVal Value As String)
+            mstr模具名称 = Value
+        End Set
+    End Property
+
+#End Region
+
+#Region "Form Event"
+
+    Private Sub frm模具一览_Load(ByVal sender As Object, ByVal e As EventArgs) Handles Me.Load
+        Try
+
+            '画面の初期化処理
+            Me.InitForm()
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+    Private Sub frm模具一览_FormClosing(ByVal sender As Object, ByVal e As System.Windows.Forms.FormClosingEventArgs) Handles Me.FormClosing
+        Try
+
+            'If Me.btnLogoOff.Text.ToString.Contains(CSTRLOGOFF) Then
+            If Me.FormOpenMode <> Constant.ENU_MODE.Model_NULL Then
+                Exit Sub
+            End If
+            If CommonMsg.PFn_ShowMsg(Me.Text, Constant.ENU_MSGID.MSGID1) = Constant.ENU_SHOWMSG.showMsgYes Then
+
+                e.Cancel = False
+            Else
+                e.Cancel = True
+            End If
+            'End If
+
+        Catch ex As Exception
+            '异常处理
+            ExHelper.ProcessEx(ex)
+        Finally
+            '释放光标
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+    Private Sub frm模具一览_KeyDown(ByVal sender As Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles Me.KeyDown
+
+        Try
+
+            Select Case e.KeyCode
+
+                Case Keys.F1
+                    btnF1清空.Focus()
+                    btnF1清空_Click(Nothing, Nothing)
+
+                Case Keys.F2
+                    btnF2查询.Focus()
+                    btnF2查询_Click(Nothing, Nothing)
+
+                Case Keys.F3
+                    btnF3选择.Focus()
+                    btnF3选择_Click(Nothing, Nothing)
+
+                Case Keys.F12
+                    btnF12关闭.Focus()
+                    btnF12关闭_Click(Nothing, Nothing)
+                    e.Handled = True
+
+                Case Else
+
+            End Select
+
+        Catch ex As Exception
+            Me.Cursor = Cursors.Default
+            MessageBox.Show(ex.ToString)
+        End Try
+
+    End Sub
+
+#End Region
+
+#Region "Control Event"
+
+#End Region
+
+#Region "Button Event"
+
+    Private Sub btnF1清空_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnF1清空.Click
+        Try
+
+            If CommonMsg.PFn_ShowMsg(Me.Text, Constant.ENU_MSGID.MSGID6) = Constant.ENU_SHOWMSG.showMsgNo Then
+                '処理終了
+                Exit Sub
+            End If
+            ClearForm()
+            InitGrid()
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub btnF12关闭_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnF12关闭.Click
+        Try
+
+            '关闭画面对话框
+            'If CommonMsg.PFn_ShowMsg(Me.Text, Constant.ENU_MSGID.MSGID1) = Constant.ENU_SHOWMSG.showMsgNo Then
+            '    '処理終了
+            '    Exit Sub
+            'End If
+
+            ReturnType = Constant.ENU_MSTSEARCH.SearchMCancel
+
+            '画面を閉じる
+            Me.Close()
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub btnF2查询_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnF2查询.Click
+        Try
+
+            '砂時計のカーソルが設定
+            Me.Cursor = Cursors.WaitCursor
+
+            '検索を実行
+            Me.DataSearch()
+
+
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub btnF3选择_Click(ByVal sender As Object, ByVal e As EventArgs) Handles btnF3选择.Click
+        Try
+            '选择処理
+            Me.Selection()
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub txt客户编号_BeforeEditorButtonCheckStateChanged(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.BeforeCheckStateChangedEventArgs) Handles txt客户编号.BeforeEditorButtonCheckStateChanged
+        Dim frmSearch As frm客户一览
+        Try
+
+            frmSearch = New frm客户一览
+            frmSearch.FormOpenMode = Constant.ENU_MODE.Model_Search
+
+            '工程信息查询画面打开
+            frmSearch.ShowDialog()
+
+            '画面数据设置
+            If frmSearch.ReturnType = Constant.ENU_MSTSEARCH.SearchMOk Then
+
+                If Not frmSearch.ReturnTable Is Nothing AndAlso 0 < frmSearch.ReturnTable.Rows.Count Then
+
+                    '根据检索画面数据进行设置                    Me.txt客户编号.Text = frmSearch.ReturnTable.Rows(0)("客户编号")     '客户编号
+
+                    Me.txt客户名称.Text = frmSearch.ReturnTable.Rows(0)("客户名称")     '客户名称
+                End If
+
+                If Not frmSearch.ReturnTable Is Nothing Then
+                    '检索画面释放                    frmSearch.ReturnTable.Dispose()
+                    frmSearch.ReturnTable = Nothing
+                End If
+
+                '检索画面释放                frmSearch.Dispose()
+                frmSearch = Nothing
+
+            End If
+
+            '光标设置
+            Me.Cursor = Cursors.Default
+        Catch ex As Exception
+            '异常处理
+            ExHelper.ProcessEx(ex)
+        Finally
+            '默认光标设置
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub txt客户编号_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txt客户编号.EditorButtonClick
+        Dim frmSearch As frm客户一览
+        Try
+
+            frmSearch = New frm客户一览
+            frmSearch.FormOpenMode = Constant.ENU_MODE.Model_Search
+
+            '工程信息查询画面打开
+            frmSearch.ShowDialog()
+
+            '画面数据设置
+            If frmSearch.ReturnType = Constant.ENU_MSTSEARCH.SearchMOk Then
+
+                If Not frmSearch.ReturnTable Is Nothing AndAlso 0 < frmSearch.ReturnTable.Rows.Count Then
+
+                    '根据检索画面数据进行设置                    Me.txt客户编号.Text = frmSearch.ReturnTable.Rows(0)("客户编号")     '客户编号
+
+                    Me.txt客户名称.Text = frmSearch.ReturnTable.Rows(0)("客户名称")     '客户名称
+                End If
+
+                If Not frmSearch.ReturnTable Is Nothing Then
+                    '检索画面释放                    frmSearch.ReturnTable.Dispose()
+                    frmSearch.ReturnTable = Nothing
+                End If
+
+                '检索画面释放                frmSearch.Dispose()
+                frmSearch = Nothing
+
+            End If
+
+            '光标设置
+            Me.Cursor = Cursors.Default
+        Catch ex As Exception
+            '异常处理
+            ExHelper.ProcessEx(ex)
+        Finally
+            '默认光标设置
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub txt客户编号_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txt客户编号.Leave
+        Dim objM客户T As M客户T
+        Dim objBLLM客户T As BLLM客户T
+
+        Try
+
+            If txt客户编号.ReadOnly Then
+                Exit Sub
+            End If
+
+            If Me.txt客户编号.Text.Trim <> String.Empty Then
+
+                If Me.txt客户编号.Tag = Me.txt客户编号.Text.Trim Then
+                    Exit Sub
+                End If
+
+                objM客户T = New M客户T
+
+                objM客户T.客户编号 = txt客户编号.Text.Trim
+
+                objBLLM客户T = New BLLM客户T
+
+                objM客户T = objBLLM客户T.LoadByPKey(objM客户T)
+
+                If objM客户T.客户名称 <> String.Empty Then
+
+                    Me.txt客户名称.Text = objM客户T.客户名称
+                Else
+
+                    CommonMsg.PFn_ShowMsg(Me.Text, Constant.ENU_MSGID.MSGID14, "客户名称")
+                    'Me.txt客户编号.Text = String.Empty
+                    Me.txt客户名称.Text = String.Empty
+                    Me.txt客户编号.Select()
+                End If
+            Else
+                Me.txt客户编号.Text = String.Empty
+            End If
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub txt设计者编号_EditorButtonClick(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinEditors.EditorButtonEventArgs) Handles txt设计者编号.EditorButtonClick
+
+
+        Dim frmSearch As frm人员一览
+        Try
+
+            frmSearch = New frm人员一览
+            frmSearch.FormOpenMode = Constant.ENU_MODE.Model_Search
+
+            '工程信息查询画面打开
+            frmSearch.ShowDialog()
+
+            '画面数据设置
+            If frmSearch.ReturnType = Constant.ENU_MSTSEARCH.SearchMOk Then
+
+                If Not frmSearch.ReturnTable Is Nothing AndAlso 0 < frmSearch.ReturnTable.Rows.Count Then
+
+                    '根据检索画面数据进行设置
+
+                    Me.txt设计者编号.Text = frmSearch.ReturnTable.Rows(0)("人员编号")
+                    Me.txt设计者名称.Text = frmSearch.ReturnTable.Rows(0)("人员名")
+
+                End If
+
+                If Not frmSearch.ReturnTable Is Nothing Then
+                    '检索画面释放
+
+                    frmSearch.ReturnTable.Dispose()
+                    frmSearch.ReturnTable = Nothing
+                End If
+
+                '检索画面释放
+
+                frmSearch.Dispose()
+                frmSearch = Nothing
+
+            End If
+
+            '光标设置
+            Me.Cursor = Cursors.Default
+        Catch ex As Exception
+            '异常处理
+            ExHelper.ProcessEx(ex)
+        Finally
+            '默认光标设置
+            Me.Cursor = Cursors.Default
+        End Try
+
+    End Sub
+
+    Private Sub txt设计者编号_Leave(ByVal sender As Object, ByVal e As EventArgs) Handles txt设计者编号.Leave
+        Dim objM人员T As M人员T
+        Dim objBLLM人员T As BLLM人员T
+
+        Try
+
+            If txt设计者编号.ReadOnly Then
+                Exit Sub
+            End If
+
+            If Me.txt设计者编号.Text.Trim <> String.Empty Then
+
+                If Me.txt设计者编号.Tag = Me.txt设计者编号.Text.Trim Then
+                    Exit Sub
+                End If
+
+                objM人员T = New M人员T
+
+                objM人员T.人员编号 = txt设计者编号.Text.Trim
+
+                objBLLM人员T = New BLLM人员T
+
+                objM人员T = objBLLM人员T.LoadByPKey(objM人员T)
+
+                If objM人员T.人员名 <> String.Empty Then
+
+                    Me.txt设计者名称.Text = objM人员T.人员名
+                Else
+
+                    CommonMsg.PFn_ShowMsg(Me.Text, Constant.ENU_MSGID.MSGID14, "人员名")
+                    'Me.txt客户编号.Text = String.Empty
+                    Me.txt设计者名称.Text = String.Empty
+                    Me.txt设计者编号.Select()
+                End If
+            Else
+                Me.txt客户编号.Text = String.Empty
+            End If
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+#End Region
+
+#Region "Grid Event"
+
+    Private Sub grdList_DoubleClickRow(ByVal sender As System.Object, _
+                                           ByVal e As Infragistics.Win.UltraWinGrid.DoubleClickRowEventArgs) Handles grdList.DoubleClickRow
+
+        Try
+
+            '选择処理
+            Me.Selection()
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+
+    End Sub
+
+    Private Sub grdList_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles grdList.MouseDown
+
+        Try
+            If grdList.ActiveRow Is Nothing Then
+                Exit Sub
+            End If
+
+            If File.Exists(strServerPicturePath & grdList.ActiveRow.Cells("模具图片").Value) Then
+                SetPictureBoxImage(Me.pic模具图片, strServerPicturePath & grdList.ActiveRow.Cells("模具图片").Value)
+            End If
+
+
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+    Private Sub grdList_InitializeLayout(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs) Handles grdList.InitializeLayout
+
+        Try
+
+            grdList.DisplayLayout.Bands(0).Columns(0).CellClickAction = Infragistics.Win.UltraWinGrid.CellClickAction.Edit
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+
+    End Sub
+
+    Private Sub grdList_KeyDown(ByVal sender As Object, ByVal e As KeyEventArgs)
+        Try
+
+            If e.KeyCode <> Keys.Enter Then
+                Exit Sub
+            End If
+
+            Select Case FormOpenMode
+
+                Case Constant.ENU_MODE.Model_Search
+                    '选择処理
+                    Me.Selection()
+            End Select
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+
+    End Sub
+
+    Private Sub grdList_ClickCell(ByVal sender As Object, ByVal e As Infragistics.Win.UltraWinGrid.ClickCellEventArgs) Handles grdList.ClickCell
+        'If grdList.ActiveCell.Equals(grdList.ActiveRow.Cells(0)) Then
+        '    If grdList.ActiveCell.Value = 0 Then
+        '        grdList.ActiveCell.Value = 1
+        '    Else
+        '        grdList.ActiveCell.Value = 0
+        '    End If
+        'End If
+
+        If e.Cell.Equals(grdList.ActiveRow.Cells(0)) Then
+            Me.grdList.UpdateData()
+        End If
+
+    End Sub
+
+#End Region
+
+#Region "Private Method"
+
+#Region "InitForm"
+    ''' <summary>
+    ''' フォーカスの初期設定処理
+    ''' </summary>
+    ''' <remarks>処理モードによってフォーカスの初期設定処理</remarks>
+    Private Sub InitForm()
+
+        Try
+
+            '画面のComboの初期値を設定する
+            Me.SetCombo()
+
+            Me.InitGrid()
+
+            '画面の内容を清空処理
+            Me.ClearForm()
+
+            '権限の処理            SetButtonStatus()
+            Me.SetPermission()
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+
+    End Sub
+#End Region
+
+#Region "SetButtonStatus"
+    Private Sub SetButtonStatus()
+        Select Case FormOpenMode
+            Case ENU_MODE.Model_NULL
+                Me.btnF3选择.Visible = False
+            Case Else
+                Me.btnF3选择.Visible = True
+        End Select
+    End Sub
+#End Region
+
+#Region "ClearForm"
+    ''' <summary>
+    ''' 画面の内容を清空処理
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub ClearForm()
+        Try
+
+            txt模具编号.Text = String.Empty
+            txt模具名称.Text = String.Empty
+            cbo模具类型.Text = String.Empty
+            txt模具型号.Text = String.Empty
+            txt客户编号.Text = String.Empty
+            txt客户名称.Text = String.Empty
+            txt设计者编号.Text = String.Empty
+            txt设计者名称.Text = String.Empty
+            Me.pic模具图片.Image = Nothing
+            Me.txt模具编号.Focus()
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+#End Region
+
+#Region "InitGrid"
+    ''' <summary>
+    ''' 画面の内容を清空処理
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub InitGrid()
+        Try
+
+            mDtSearch = New DataTable
+
+            mDtSearch.Columns.Add("模具编号")
+            mDtSearch.Columns.Add("类型")
+            mDtSearch.Columns.Add("模具名称")
+            mDtSearch.Columns.Add("模具型号")
+            mDtSearch.Columns.Add("生产日期")
+            mDtSearch.Columns.Add("使用状态")
+            mDtSearch.Columns.Add("维护周期")
+            mDtSearch.Columns.Add("设计者")
+            mDtSearch.Columns.Add("设计者名称")
+            mDtSearch.Columns.Add("上次维护日期")
+            mDtSearch.Columns.Add("制造日期")
+            mDtSearch.Columns.Add("存放区域")
+            mDtSearch.Columns.Add("使用者编号")
+            mDtSearch.Columns.Add("维护负责人编号")
+            mDtSearch.Columns.Add("维护部门名称")
+            mDtSearch.Columns.Add("维护负责人姓名")
+            mDtSearch.Columns.Add("维护内容")
+            mDtSearch.Columns.Add("模具图片")
+            mDtSearch.Columns.Add("负责人电话")
+            grdList.DataSource = mDtSearch
+            'grdList.DisplayLayout.Bands(0).Columns(0).Hidden = True
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+#End Region
+
+#Region "SetPermission"
+
+    Private Sub SetPermission()
+        Try
+
+            Me.btnF2查询.Enabled = Utility.PFn_GetAuth(Me.btnF2查询.Tag)
+            Me.btnF3选择.Enabled = Utility.PFn_GetAuth(Me.btnF3选择.Tag)
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+#End Region
+
+#Region "SetCombo"
+
+    Private Sub SetCombo()
+
+        Dim dtCbo As DataTable = Nothing            'コンボボックスデータテーブル
+
+        Try
+
+            '使用状态
+            Utility.PFn_SetCombo(Me.cbo模具类型, "VM模具类型", 0)
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+#End Region
+
+#Region "Selection"
+
+    ''' <summary>
+    ''' 选择処理
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub Selection()
+
+        Dim objBll As New BLLM模具T
+        Dim objM模具T As New M模具T
+
+        Try
+
+            '一览打开，不做处理            If FormOpenMode = ENU_MODE.Model_NULL Then
+                Exit Sub
+            End If
+
+            '选择行が無い場合
+            If Me.grdList.ActiveRow Is Nothing Then
+                'メッセージ表示
+                CommonMsg.PFn_ShowMsg(Me.Text, Constant.ENU_MSGID.MSGID18)
+                '処理終了
+                Exit Sub
+            End If
+
+            '查询の选择されたレCDを取得する
+            objM模具T.模具编号 = Me.grdList.ActiveRow.Cells("模具编号").Text.Trim
+
+            'テーブルにデータを追加
+            ReturnTable = objBll.LoadAll(objM模具T)
+
+
+            If ReturnTable Is Nothing OrElse ReturnTable.Rows.Count = 0 Then
+                'メッセージ表示
+                CommonMsg.PFn_ShowMsg(Me.Text, Constant.ENU_MSGID.MSGID19)
+                Exit Sub
+            End If
+
+            'End If
+
+            ReturnType = Constant.ENU_MSTSEARCH.SearchMOk
+
+            '画面を閉じる
+            Me.Close()
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+
+#End Region
+
+#Region "DataSearch"
+
+    Private Sub DataSearch()
+
+        Dim objM模具T As M模具T
+
+        Dim objBllM模具T As New BLLM模具T
+
+        Try
+            objM模具T = New M模具T
+
+            objM模具T.模具编号 = Me.txt模具编号.Text.Trim
+            objM模具T.模具名称 = Me.txt模具名称.Value
+            objM模具T.设计者 = Me.txt设计者编号.Value
+            objM模具T.客户编号 = Me.txt客户编号.Value
+            objM模具T.类型 = Me.cbo模具类型.Text.Trim
+            objM模具T.模具型号 = Me.txt模具型号.Value
+
+            '查询の検索処理
+
+
+            mDtSearch = objBllM模具T.LoadByWhere(objM模具T)
+
+
+            If mDtSearch Is Nothing OrElse mDtSearch.Rows.Count = 0 Then
+
+                '結果０件ＭＳＧ出力
+                'メッセージCD：211
+                Me.Cursor = Cursors.Default
+
+                CommonMsg.PFn_ShowMsg(Me.Text, Constant.ENU_MSGID.MSGID16)
+
+                ''查询Gridの初期化
+                'Me.grdList.PClear()
+                '検索データを表示する
+
+                Me.grdList.DataSource = mDtSearch
+
+                'フォーカスの設定処理
+                Me.txt模具编号.Focus()
+            Else
+
+                '検索データを表示する
+                Me.grdList.DataSource = mDtSearch
+                'If FormOpenMode = Constant.ENU_MODE.Model_Ref Then
+                '    grdList.DisplayLayout.Bands(0).Columns(0).Hidden = False
+                'End If
+
+                'DataCheck()
+                grdList.UpdateData()
+                Me.grdList.Focus()
+                Me.grdList.ActiveRow = Me.grdList.Rows(0)
+                'grdList.DisplayLayout.Bands(0).Columns("制造日期").CellActivation = Activation.AllowEdit
+            End If
+
+        Catch ex As Exception
+            '異常処理
+            ExHelper.ProcessEx(ex)
+        Finally
+            'デフォルトのカーソル
+            Me.Cursor = Cursors.Default
+        End Try
+    End Sub
+#End Region
+
+#End Region
+#Region "图片大小设定"
+    Friend Sub SetPictureBoxImage(ByVal pb As PictureBox, ByVal sFileName As String)
+        '定义一个Bitmap对象作为绘制的接受对象
+        Dim bmp As New Bitmap(pb.Width, pb.Height)
+        Dim g As Graphics = Graphics.FromImage(bmp)
+
+        Dim img As Image = Image.FromFile(sFileName)
+        Dim rectImage As New Rectangle(0, 0, bmp.Width, bmp.Height)
+        '按比例缩放
+        GetScaleZoomRect(img.Width, img.Height, rectImage.Width, rectImage.Height)
+        g.DrawImage(img, rectImage)
+
+        pb.Image = bmp
+    End Sub
+
+    Friend Sub GetScaleZoomRect(ByVal nSrcWidth As Integer, ByVal nSrcHeight As Integer, ByRef nDstWidth As Integer, ByRef nDstHeight As Integer)
+        If nSrcWidth / nSrcHeight < nDstWidth / nDstHeight Then
+            nDstWidth = nDstHeight * (nSrcWidth / nSrcHeight)
+        Else
+            nDstHeight = nDstWidth * (nSrcHeight / nSrcWidth)
+        End If
+    End Sub
+
+#End Region
+
+End Class

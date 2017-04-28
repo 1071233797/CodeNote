@@ -1,0 +1,1575 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84598B5C-1E52-4D76-83C7-733E7C937C9B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>HRJS.My.MyApplication</StartupObject>
+    <RootNamespace>HRJS</RootNamespace>
+    <AssemblyName>HRJS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HRJS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>HRJS.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ActiveReports.Chart, Version=5.3.1436.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ActiveReports.Viewer3, Version=5.3.1436.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ActiveReports3, Version=5.3.1436.2, Culture=neutral, PublicKeyToken=cc4967777c49a3ff, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Shared.v8.3, Version=8.3.20083.2021, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Infragistics2.Shared.v8.3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.Misc.v8.3, Version=8.3.20083.2021, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Infragistics2.Win.Misc.v8.3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinDataSource.v8.3, Version=8.3.20083.2021, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Infragistics2.Win.UltraWinDataSource.v8.3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinEditors.v8.3, Version=8.3.20083.2021, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Infragistics2.Win.UltraWinEditors.v8.3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinGrid.v8.3, Version=8.3.20083.2021, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Infragistics2.Win.UltraWinGrid.v8.3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.UltraWinTabControl.v8.3, Version=8.3.20083.2021, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Infragistics2.Win.UltraWinTabControl.v8.3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Infragistics2.Win.v8.3, Version=8.3.20083.2021, Culture=neutral, PublicKeyToken=7dd5c3163f2cd0cb, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Infragistics2.Win.v8.3.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>D:\Program Files (x86)\Microsoft Visual Studio 11.0\Visual Studio Tools for Office\PIA\Office14\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="O2S.Components.PDFRender4NET, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\O2S.Components.PDFRender4NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.License, Version=1.3.2.35, Culture=neutral, PublicKeyToken=b1144360237c8b3f, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Spire.License.dll</HintPath>
+    </Reference>
+    <Reference Include="Spire.Pdf, Version=3.2.52.56035, Culture=neutral, PublicKeyToken=663f351905198cb3, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Spire.Pdf.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UserControl, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\UserControl\bin\Debug\UserControl.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="00_Common\BaseDBT.vb" />
+    <Compile Include="00_Common\ComBusiness.vb" />
+    <Compile Include="00_Common\Common.vb" />
+    <Compile Include="00_Common\CommonMsg.vb" />
+    <Compile Include="00_Common\Configuration.vb" />
+    <Compile Include="00_Common\Constant.vb" />
+    <Compile Include="00_Common\DbHelper.vb" />
+    <Compile Include="00_Common\ExHelper.vb" />
+    <Compile Include="00_Common\MessageT.vb" />
+    <Compile Include="00_Common\Utility.vb" />
+    <Compile Include="01_UI\00_主画面\主画面.Designer.vb">
+      <DependentUpon>主画面.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\00_主画面\主画面.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm产品种类一览.Designer.vb">
+      <DependentUpon>frm产品种类一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm产品种类一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm供应商一览.Designer.vb">
+      <DependentUpon>frm供应商一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm供应商一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm供应商管理.Designer.vb">
+      <DependentUpon>frm供应商管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm供应商管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm产品种类管理.Designer.vb">
+      <DependentUpon>frm产品种类管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm产品种类管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm包装一览.Designer.vb">
+      <DependentUpon>frm包装一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm包装一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm包装管理.Designer.vb">
+      <DependentUpon>frm包装管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm包装管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm原材料信息一览.Designer.vb">
+      <DependentUpon>frm原材料信息一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm原材料信息一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm货位一览.Designer.vb">
+      <DependentUpon>frm货位一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm货位一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm货位管理.Designer.vb">
+      <DependentUpon>frm货位管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm货位管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm半成品标签打印.Designer.vb">
+      <DependentUpon>frm半成品标签打印.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm半成品标签打印.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm出荷一览.Designer.vb">
+      <DependentUpon>frm出荷一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm出荷一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm原材料标签打印.Designer.vb">
+      <DependentUpon>frm原材料标签打印.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm原材料标签打印.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm外协品标签打印.Designer.vb">
+      <DependentUpon>frm外协品标签打印.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm外协品标签打印.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm外协对象一览.Designer.vb">
+      <DependentUpon>frm外协对象一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm外协对象一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm外协对象管理.Designer.vb">
+      <DependentUpon>frm外协对象管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm外协对象管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm模具一览.Designer.vb">
+      <DependentUpon>frm模具一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm模具一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm模具管理.Designer.vb">
+      <DependentUpon>frm模具管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm模具管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm成品标签打印.Designer.vb">
+      <DependentUpon>frm成品标签打印.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm成品标签打印.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm流转票一览.Designer.vb">
+      <DependentUpon>frm流转票一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm流转票一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm流转票管理.Designer.vb">
+      <DependentUpon>frm流转票管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm流转票管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品出库申请一览.Designer.vb">
+      <DependentUpon>frm外协品出库申请一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品出库申请一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm入出库记录一览.Designer.vb">
+      <DependentUpon>frm入出库记录一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm入出库记录一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm出荷指示发行.Designer.vb">
+      <DependentUpon>frm出荷指示发行.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm出荷指示发行.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm出荷指示一览.Designer.vb">
+      <DependentUpon>frm出荷指示一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm出荷指示一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm成品入库申请.Designer.vb">
+      <DependentUpon>frm成品入库申请.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm成品入库申请.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm成品入库申请一览.Designer.vb">
+      <DependentUpon>frm成品入库申请一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm成品入库申请一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品入库申请一览.Designer.vb">
+      <DependentUpon>frm半成品入库申请一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品入库申请一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品出库申请一览.Designer.vb">
+      <DependentUpon>frm半成品出库申请一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品出库申请一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料入库申请.Designer.vb">
+      <DependentUpon>frm原材料入库申请.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料入库申请.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料入库申请一览.Designer.vb">
+      <DependentUpon>frm原材料入库申请一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料入库申请一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料出库申请一览.Designer.vb">
+      <DependentUpon>frm原材料出库申请一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料出库申请一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品库存一览.Designer.vb">
+      <DependentUpon>frm半成品库存一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品库存一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm半成品入库质检一览.Designer.vb">
+      <DependentUpon>frm半成品入库质检一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm半成品入库质检一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm外协品入库质检一览.Designer.vb">
+      <DependentUpon>frm外协品入库质检一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm外协品入库质检一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm成品入库质检.Designer.vb">
+      <DependentUpon>frm成品入库质检.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm成品入库质检.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm成品入库质检一览.Designer.vb">
+      <DependentUpon>frm成品入库质检一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm成品入库质检一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\07_其他\frm审核.Designer.vb">
+      <DependentUpon>frm审核.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\07_其他\frm审核.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm半成品入库质检.Designer.vb">
+      <DependentUpon>frm半成品入库质检.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm半成品入库质检.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm原材料入库质检.Designer.vb">
+      <DependentUpon>frm原材料入库质检.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm原材料入库质检.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品入库申请.Designer.vb">
+      <DependentUpon>frm外协品入库申请.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品入库申请.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品入库申请一览.Designer.vb">
+      <DependentUpon>frm外协品入库申请一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品入库申请一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品入库管理.Designer.vb">
+      <DependentUpon>frm外协品入库管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品入库管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品出库申请.Designer.vb">
+      <DependentUpon>frm外协品出库申请.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品出库申请.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品入库申请.Designer.vb">
+      <DependentUpon>frm半成品入库申请.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品入库申请.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品出库申请.Designer.vb">
+      <DependentUpon>frm半成品出库申请.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品出库申请.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm原材料入库质检一览.Designer.vb">
+      <DependentUpon>frm原材料入库质检一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm原材料入库质检一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm原材料出库申请.Designer.vb">
+      <DependentUpon>frm原材料出库申请.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm原材料出库申请.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品入出库一览.Designer.vb">
+      <DependentUpon>frm半成品入出库一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm半成品入出库一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品库存一览.Designer.vb">
+      <DependentUpon>frm外协品库存一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品库存一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品盘点管理.Designer.vb">
+      <DependentUpon>frm外协品盘点管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协品盘点管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm原材料信息管理.Designer.vb">
+      <DependentUpon>frm原材料信息管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm原材料信息管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协加工一览.Designer.vb">
+      <DependentUpon>frm外协加工一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协加工一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协加工管理.Designer.vb">
+      <DependentUpon>frm外协加工管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协加工管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm包装实绩管理.Designer.vb">
+      <DependentUpon>frm包装实绩管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm包装实绩管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm包装实绩一览.Designer.vb">
+      <DependentUpon>frm包装实绩一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm包装实绩一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协申请一览.Designer.vb">
+      <DependentUpon>frm外协申请一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm外协申请一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm成品库存一览.Designer.vb">
+      <DependentUpon>frm成品库存一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm成品库存一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm废料入出库一览.Designer.vb">
+      <DependentUpon>frm废料入出库一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm废料入出库一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm废料回收一览.Designer.vb">
+      <DependentUpon>frm废料回收一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm废料回收一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm废料回收管理.Designer.vb">
+      <DependentUpon>frm废料回收管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm废料回收管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\原材料信息一览.Designer.vb">
+      <DependentUpon>原材料信息一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\原材料信息一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm成品盘点管理.Designer.vb">
+      <DependentUpon>frm成品盘点管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm成品盘点管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm外协品入库质检.Designer.vb">
+      <DependentUpon>frm外协品入库质检.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm外协品入库质检.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm报废品一览.Designer.vb">
+      <DependentUpon>frm报废品一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm报废品一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm生产自检一览.Designer.vb">
+      <DependentUpon>frm生产自检一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm生产自检一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm生产自检录入.Designer.vb">
+      <DependentUpon>frm生产自检录入.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm生产自检录入.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm生产计划一览.Designer.vb">
+      <DependentUpon>frm生产计划一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm生产计划一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm生产计划制定.Designer.vb">
+      <DependentUpon>frm生产计划制定.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm生产计划制定.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料盘点管理.Designer.vb">
+      <DependentUpon>frm原材料盘点管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料盘点管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm订单一览.Designer.vb">
+      <DependentUpon>frm订单一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm订单一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm订单录入.Designer.vb">
+      <DependentUpon>frm订单录入.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm订单录入.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm返品一览.Designer.vb">
+      <DependentUpon>frm返品一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm返品一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm生产实绩一览.Designer.vb">
+      <DependentUpon>frm生产实绩一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm生产实绩一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm生产实绩录入.designer.vb">
+      <DependentUpon>frm生产实绩录入.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm生产实绩录入.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm报废品管理.Designer.vb">
+      <DependentUpon>frm报废品管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\04_制造部\frm报废品管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm生产检查一览.Designer.vb">
+      <DependentUpon>frm生产检查一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm生产检查一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm生产检查管理.Designer.vb">
+      <DependentUpon>frm生产检查管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\05_品质部\frm生产检查管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm终端设备一览.Designer.vb">
+      <DependentUpon>frm终端设备一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm终端设备一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm终端设备管理.Designer.vb">
+      <DependentUpon>frm终端设备管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm终端设备管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料入出库一览.Designer.vb">
+      <DependentUpon>frm原材料入出库一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料入出库一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm人员一览.designer.vb">
+      <DependentUpon>frm人员一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm人员一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm人员管理.Designer.vb">
+      <DependentUpon>frm人员管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm人员管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料采购一览.designer.vb">
+      <DependentUpon>frm原材料采购一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料采购一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料采购详细.Designer.vb">
+      <DependentUpon>frm原材料采购详细.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料采购详细.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm客户一览.Designer.vb">
+      <DependentUpon>frm客户一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm客户一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm客户管理.Designer.vb">
+      <DependentUpon>frm客户管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm客户管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm数据备份.Designer.vb">
+      <DependentUpon>frm数据备份.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm数据备份.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm订单进度查询.Designer.vb">
+      <DependentUpon>frm订单进度查询.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm订单进度查询.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料出库管理.Designer.vb">
+      <DependentUpon>frm原材料出库管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料出库管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm生产设备一览.Designer.vb">
+      <DependentUpon>frm生产设备一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm生产设备一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm生产设备管理.Designer.vb">
+      <DependentUpon>frm生产设备管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm生产设备管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料库存一览.Designer.vb">
+      <DependentUpon>frm原材料库存一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料库存一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料入库管理.Designer.vb">
+      <DependentUpon>frm原材料入库管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\03_业务部\frm原材料入库管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm部门一览.Designer.vb">
+      <DependentUpon>frm部门一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm部门一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm部门管理.Designer.vb">
+      <DependentUpon>frm部门管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\01_基础信息\frm部门管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm图纸信息一览.Designer.vb">
+      <DependentUpon>frm图纸信息一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm图纸信息一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm图纸信息管理.Designer.vb">
+      <DependentUpon>frm图纸信息管理.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm图纸信息管理.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm工艺卡信息一览.Designer.vb">
+      <DependentUpon>frm工艺卡信息一览.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm工艺卡信息一览.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm工艺卡录入.Designer.vb">
+      <DependentUpon>frm工艺卡录入.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\02_技术部\frm工艺卡录入.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\06_InheritsForm\InheritsBusinessForm.Designer.vb">
+      <DependentUpon>InheritsBusinessForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\06_InheritsForm\InheritsBusinessForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\06_InheritsForm\InheritsMainForm.Designer.vb">
+      <DependentUpon>InheritsMainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\06_InheritsForm\InheritsMainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\06_InheritsForm\InheritsMasterForm.Designer.vb">
+      <DependentUpon>InheritsMasterForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\06_InheritsForm\InheritsMasterForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\06_InheritsForm\InheritsSearchForm.Designer.vb">
+      <DependentUpon>InheritsSearchForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\06_InheritsForm\InheritsSearchForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\ReportViewr.Designer.vb">
+      <DependentUpon>ReportViewr.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\ReportViewr.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\rptBox.Designer.vb">
+      <DependentUpon>rptBox.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\rptBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\出荷.Designer.vb">
+      <DependentUpon>出荷.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\出荷.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\产成品入库申请单.Designer.vb">
+      <DependentUpon>产成品入库申请单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\产成品入库申请单.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\半成品入库申请单.Designer.vb">
+      <DependentUpon>半成品入库申请单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\半成品入库申请单.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\原材料入库明细.Designer.vb">
+      <DependentUpon>原材料入库明细.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\原材料入库明细.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\原材料出库单.Designer.vb">
+      <DependentUpon>原材料出库单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\原材料出库单.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\原材料采购计划单.Designer.vb">
+      <DependentUpon>原材料采购计划单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\原材料采购计划单.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\标签\成品.Designer.vb">
+      <DependentUpon>成品.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\标签\成品.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\标签\半成品.Designer.vb">
+      <DependentUpon>半成品.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\标签\半成品.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\标签\原材料.Designer.vb">
+      <DependentUpon>原材料.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\标签\原材料.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\生产工序.Designer.vb">
+      <DependentUpon>生产工序.vb</DependentUpon>
+    </Compile>
+    <Compile Include="01_UI\08_帐票\生产工序.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="02_BLL\01_基础信息\BLLMPDAT.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM产品种类T.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM人员T.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM供应商T .vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM包装T.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM原材料信息T.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM客户T.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM模具T.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM系统设置T.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM设备T.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM部门T.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLL主画面.vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM外协对象T .vb" />
+    <Compile Include="02_BLL\01_基础信息\BLLM货位T.vb" />
+    <Compile Include="02_BLL\02_技术部\BLLM图纸T.vb" />
+    <Compile Include="02_BLL\02_技术部\BLLM工艺卡T.vb" />
+    <Compile Include="02_BLL\02_技术部\BLLM流转票管理T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLM生产实际管理T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLM生产计划制定T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLZ原材料出库申请T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLZ半成品入库申请T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLZ包装实际管理T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLZ半成品出库申请T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLZ报废品管理T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLM生产自检录入T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLZ半成品入库质检T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLZ生产检查管理T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLZ成品入库申请T.vb" />
+    <Compile Include="02_BLL\04_制造部\BLLZ成品入库质检T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM原材料入出库记录T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM原材料库存T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM原材料库存盘点T.vb" />
+    <Compile Include="02_BLL\05_业务部\BllM外协加工管理T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM外协品入出库记录T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM成品库存T.vb" />
+    <Compile Include="02_BLL\05_业务部\BllM报废品T.vb" />
+    <Compile Include="02_BLL\05_业务部\BllM订单表T.vb" />
+    <Compile Include="02_BLL\05_业务部\BllM原材料采购单管理T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM原材料入库申请T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM外协品库存T.vb" />
+    <Compile Include="02_BLL\05_业务部\BllM外协申请一览T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM返品一览T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM废料回收管理T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM外协品入库申请T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM外协品出库申请T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM外协品库存盘点T.vb" />
+    <Compile Include="02_BLL\05_业务部\BllM废料入出库T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLZ原材料入库质检T.vb" />
+    <Compile Include="02_BLL\05_业务部\BllM出荷指示T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM成品入出库记录T.vb" />
+    <Compile Include="02_BLL\05_业务部\BLLM成品库存盘点T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM外协对象T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalMPDAT.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM产品种类T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM人员T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM供应商T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM包装T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM原材料信息T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM模具T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM设备T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM部门T.vb" />
+    <Compile Include="03_DAL\01_基础信息\Dal主画面.vb" />
+    <Compile Include="03_DAL\01_基础信息\Dal系统设置T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM客户T.vb" />
+    <Compile Include="03_DAL\01_基础信息\DalM货位T.vb" />
+    <Compile Include="03_DAL\02_技术部\DalM图纸T.vb" />
+    <Compile Include="03_DAL\02_技术部\DalM工艺卡T.vb" />
+    <Compile Include="03_DAL\02_技术部\DalM流转票管理T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalM生产实际管理T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalM生产计划制定T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalZ原材料出库申请T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalZ半成品入库申请T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalZ包装实际管理T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalZ半成品出库申请T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalZ报废品管理T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalM生产自检录入T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalZ半成品入库质检T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalZ生产检查管理T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalZ成品入库申请T.vb" />
+    <Compile Include="03_DAL\04_制造部\DalZ成品入库质检T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM废料入出库T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM外协加工管理T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM外协品入出库记录T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM外协申请一览T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM原材料入出库记录T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM原材料库存T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM原材料库存盘点T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM成品库存T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM报废品T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM订单表T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM原材料采购表T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM原材料入库申请T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM外协品库存T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM返品一览T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM废料回收管理T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM外协品入库申请T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM外协品出库申请T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM外协品库存盘点T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalZ原材料入库质检T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM出荷指示T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM成品入出库记录T.vb" />
+    <Compile Include="03_DAL\05_业务部\DalM成品库存盘点T.vb" />
+    <Compile Include="04_Model\B原材料库存T.vb" />
+    <Compile Include="04_Model\B原材料库存盘点表T.vb" />
+    <Compile Include="04_Model\B原材料采购管理T.vb" />
+    <Compile Include="04_Model\B外协加工管理T.vb" />
+    <Compile Include="04_Model\B外协申请一览T.vb" />
+    <Compile Include="04_Model\B废料回收管理T.vb" />
+    <Compile Include="04_Model\B报废品T.vb" />
+    <Compile Include="04_Model\B废料入出库T.vb" />
+    <Compile Include="04_Model\M外协对象T.vb" />
+    <Compile Include="04_Model\MPDAT.vb" />
+    <Compile Include="04_Model\B原材料入出库一览T.vb" />
+    <Compile Include="04_Model\M产品种类T.vb" />
+    <Compile Include="04_Model\M人员T.vb" />
+    <Compile Include="04_Model\M人员权限T.vb" />
+    <Compile Include="04_Model\M供应商T.vb" />
+    <Compile Include="04_Model\M包装T.vb" />
+    <Compile Include="04_Model\M原材料信息T.vb" />
+    <Compile Include="04_Model\M图纸T.vb" />
+    <Compile Include="04_Model\M客户T.vb" />
+    <Compile Include="04_Model\B成品库存T.vb" />
+    <Compile Include="04_Model\M工艺卡T.vb" />
+    <Compile Include="04_Model\M担当者T.vb" />
+    <Compile Include="04_Model\M数据库备份T.vb" />
+    <Compile Include="04_Model\M模具T.vb" />
+    <Compile Include="04_Model\B订单表T.vb" />
+    <Compile Include="04_Model\M流转票管理T.vb" />
+    <Compile Include="04_Model\M生产计划制定T.vb" />
+    <Compile Include="04_Model\M设备T.vb" />
+    <Compile Include="04_Model\M部门T.vb" />
+    <Compile Include="04_Model\Z原材料出库申请T.vb" />
+    <Compile Include="04_Model\Z报废品管理T.vb" />
+    <Compile Include="04_Model\Z生产实际管理T.vb" />
+    <Compile Include="04_Model\Z半成品入库申请T.vb" />
+    <Compile Include="04_Model\Z包装实际管理T.vb" />
+    <Compile Include="04_Model\Z外协品出库申请T.vb" />
+    <Compile Include="04_Model\B原材料入库申请T.vb" />
+    <Compile Include="04_Model\B外协品库存T.vb" />
+    <Compile Include="04_Model\B外协品入出库一览T.vb" />
+    <Compile Include="04_Model\B返品一览T.vb" />
+    <Compile Include="04_Model\B外协品入库申请T.vb" />
+    <Compile Include="04_Model\Z半成品出库申请T.vb" />
+    <Compile Include="04_Model\B外协品库存盘点T.vb" />
+    <Compile Include="04_Model\Z生产自检录入T.vb" />
+    <Compile Include="04_Model\Z原材料入库质检T.vb" />
+    <Compile Include="04_Model\M货位T.vb" />
+    <Compile Include="04_Model\Z半成品入库质检T.vb" />
+    <Compile Include="04_Model\Z生产检查管理T.vb" />
+    <Compile Include="04_Model\Z成品入库申请T.vb" />
+    <Compile Include="04_Model\Z成品入库质检T.vb" />
+    <Compile Include="04_Model\B出荷指示T.vb" />
+    <Compile Include="04_Model\B成品入出库一览T.vb" />
+    <Compile Include="04_Model\B成品库存盘点T.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="01_UI\00_主画面\主画面.resx">
+      <DependentUpon>主画面.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm产品种类一览.resx">
+      <DependentUpon>frm产品种类一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm产品种类管理.resx">
+      <DependentUpon>frm产品种类管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm供应商一览.resx">
+      <DependentUpon>frm供应商一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm供应商管理.resx">
+      <DependentUpon>frm供应商管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm包装一览.resx">
+      <DependentUpon>frm包装一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm包装管理.resx">
+      <DependentUpon>frm包装管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm原材料信息一览.resx">
+      <DependentUpon>frm原材料信息一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm原材料信息管理.resx">
+      <DependentUpon>frm原材料信息管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm货位一览.resx">
+      <DependentUpon>frm货位一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm货位管理.resx">
+      <DependentUpon>frm货位管理.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm半成品标签打印.resx">
+      <DependentUpon>frm半成品标签打印.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm出荷一览.resx">
+      <DependentUpon>frm出荷一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm原材料标签打印.resx">
+      <DependentUpon>frm原材料标签打印.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm外协品标签打印.resx">
+      <DependentUpon>frm外协品标签打印.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm外协对象一览.resx">
+      <DependentUpon>frm外协对象一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm外协对象管理.resx">
+      <DependentUpon>frm外协对象管理.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm模具一览.resx">
+      <DependentUpon>frm模具一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm模具管理.resx">
+      <DependentUpon>frm模具管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm成品标签打印.resx">
+      <DependentUpon>frm成品标签打印.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\原材料信息一览.resx">
+      <DependentUpon>原材料信息一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\02_技术部\frm流转票一览.resx">
+      <DependentUpon>frm流转票一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\02_技术部\frm流转票管理.resx">
+      <DependentUpon>frm流转票管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协品出库申请一览.resx">
+      <DependentUpon>frm外协品出库申请一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm入出库记录一览.resx">
+      <DependentUpon>frm入出库记录一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm出荷指示发行.resx">
+      <DependentUpon>frm出荷指示发行.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm出荷指示一览.resx">
+      <DependentUpon>frm出荷指示一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm成品入库申请.resx">
+      <DependentUpon>frm成品入库申请.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm成品入库申请一览.resx">
+      <DependentUpon>frm成品入库申请一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm半成品入库申请一览.resx">
+      <DependentUpon>frm半成品入库申请一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm半成品出库申请一览.resx">
+      <DependentUpon>frm半成品出库申请一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料入库申请.resx">
+      <DependentUpon>frm原材料入库申请.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料入库申请一览.resx">
+      <DependentUpon>frm原材料入库申请一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协品盘点管理.resx">
+      <DependentUpon>frm外协品盘点管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm半成品库存一览.resx">
+      <DependentUpon>frm半成品库存一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm半成品入库质检一览.resx">
+      <DependentUpon>frm半成品入库质检一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm外协品入库质检一览.resx">
+      <DependentUpon>frm外协品入库质检一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm成品入库质检.resx">
+      <DependentUpon>frm成品入库质检.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm成品入库质检一览.resx">
+      <DependentUpon>frm成品入库质检一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\07_其他\frm审核.resx">
+      <DependentUpon>frm审核.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm半成品入库质检.resx">
+      <DependentUpon>frm半成品入库质检.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm原材料入库质检.resx">
+      <DependentUpon>frm原材料入库质检.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料出库申请一览.resx">
+      <DependentUpon>frm原材料出库申请一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协品入库申请.resx">
+      <DependentUpon>frm外协品入库申请.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协品入库申请一览.resx">
+      <DependentUpon>frm外协品入库申请一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协品入库管理.resx">
+      <DependentUpon>frm外协品入库管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协品出库申请.resx">
+      <DependentUpon>frm外协品出库申请.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm半成品入库申请.resx">
+      <DependentUpon>frm半成品入库申请.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm半成品出库申请.resx">
+      <DependentUpon>frm半成品出库申请.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm原材料入库质检一览.resx">
+      <DependentUpon>frm原材料入库质检一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm原材料出库申请.resx">
+      <DependentUpon>frm原材料出库申请.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm半成品入出库一览.resx">
+      <DependentUpon>frm半成品入出库一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协品库存一览.resx">
+      <DependentUpon>frm外协品库存一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协加工一览.resx">
+      <DependentUpon>frm外协加工一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协加工管理.resx">
+      <DependentUpon>frm外协加工管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm包装实绩管理.resx">
+      <DependentUpon>frm包装实绩管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm包装实绩一览.resx">
+      <DependentUpon>frm包装实绩一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm外协申请一览.resx">
+      <DependentUpon>frm外协申请一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm成品库存一览.resx">
+      <DependentUpon>frm成品库存一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm废料入出库一览.resx">
+      <DependentUpon>frm废料入出库一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm废料回收一览.resx">
+      <DependentUpon>frm废料回收一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm废料回收管理.resx">
+      <DependentUpon>frm废料回收管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm成品盘点管理.resx">
+      <DependentUpon>frm成品盘点管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm外协品入库质检.resx">
+      <DependentUpon>frm外协品入库质检.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm报废品一览.resx">
+      <DependentUpon>frm报废品一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm生产自检一览.resx">
+      <DependentUpon>frm生产自检一览.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm生产自检录入.resx">
+      <DependentUpon>frm生产自检录入.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm生产计划一览.resx">
+      <DependentUpon>frm生产计划一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm生产计划制定.resx">
+      <DependentUpon>frm生产计划制定.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料盘点管理.resx">
+      <DependentUpon>frm原材料盘点管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm订单一览.resx">
+      <DependentUpon>frm订单一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm订单录入.resx">
+      <DependentUpon>frm订单录入.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm返品一览.resx">
+      <DependentUpon>frm返品一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm生产实绩一览.resx">
+      <DependentUpon>frm生产实绩一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm生产实绩录入.resx">
+      <DependentUpon>frm生产实绩录入.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\04_制造部\frm报废品管理.resx">
+      <DependentUpon>frm报废品管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm生产检查一览.resx">
+      <DependentUpon>frm生产检查一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\05_品质部\frm生产检查管理.resx">
+      <DependentUpon>frm生产检查管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm终端设备一览.resx">
+      <DependentUpon>frm终端设备一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm终端设备管理.resx">
+      <DependentUpon>frm终端设备管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料入出库一览.resx">
+      <DependentUpon>frm原材料入出库一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm人员一览.resx">
+      <DependentUpon>frm人员一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm人员管理.resx">
+      <DependentUpon>frm人员管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料采购一览.resx">
+      <DependentUpon>frm原材料采购一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料采购详细.resx">
+      <DependentUpon>frm原材料采购详细.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm客户一览.resx">
+      <DependentUpon>frm客户一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm客户管理.resx">
+      <DependentUpon>frm客户管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm数据备份.resx">
+      <DependentUpon>frm数据备份.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm订单进度查询.resx">
+      <DependentUpon>frm订单进度查询.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料出库管理.resx">
+      <DependentUpon>frm原材料出库管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm生产设备一览.resx">
+      <DependentUpon>frm生产设备一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm生产设备管理.resx">
+      <DependentUpon>frm生产设备管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料库存一览.resx">
+      <DependentUpon>frm原材料库存一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\03_业务部\frm原材料入库管理.resx">
+      <DependentUpon>frm原材料入库管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm部门一览.resx">
+      <DependentUpon>frm部门一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\01_基础信息\frm部门管理.resx">
+      <DependentUpon>frm部门管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\02_技术部\frm图纸信息一览.resx">
+      <DependentUpon>frm图纸信息一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\02_技术部\frm图纸信息管理.resx">
+      <DependentUpon>frm图纸信息管理.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\02_技术部\frm工艺卡信息一览.resx">
+      <DependentUpon>frm工艺卡信息一览.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\02_技术部\frm工艺卡录入.resx">
+      <DependentUpon>frm工艺卡录入.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\06_InheritsForm\InheritsBusinessForm.resx">
+      <DependentUpon>InheritsBusinessForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\06_InheritsForm\InheritsMainForm.resx">
+      <DependentUpon>InheritsMainForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\06_InheritsForm\InheritsMasterForm.resx">
+      <DependentUpon>InheritsMasterForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\06_InheritsForm\InheritsSearchForm.resx">
+      <DependentUpon>InheritsSearchForm.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\ReportViewr.resx">
+      <DependentUpon>ReportViewr.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\rptBox.resx">
+      <DependentUpon>rptBox.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\出荷.resx">
+      <DependentUpon>出荷.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\产成品入库申请单.resx">
+      <DependentUpon>产成品入库申请单.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\半成品入库申请单.resx">
+      <DependentUpon>半成品入库申请单.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\原材料入库明细.resx">
+      <DependentUpon>原材料入库明细.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\原材料出库单.resx">
+      <DependentUpon>原材料出库单.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\原材料采购计划单.resx">
+      <DependentUpon>原材料采购计划单.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\标签\成品.resx">
+      <DependentUpon>成品.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\标签\半成品.resx">
+      <DependentUpon>半成品.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\标签\原材料.resx">
+      <DependentUpon>原材料.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="01_UI\08_帐票\生产工序.resx">
+      <DependentUpon>生产工序.vb</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>True</Private>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

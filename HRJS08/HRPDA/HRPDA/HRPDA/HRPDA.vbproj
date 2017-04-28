@@ -1,0 +1,276 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{DE9192E0-05A2-4384-9295-D68D78784B93}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>HRPDA.FormMain</StartupObject>
+    <RootNamespace>HRPDA</RootNamespace>
+    <AssemblyName>HRPDA</AssemblyName>
+    <ProjectTypeGuids>{68B1623D-7FB9-47D8-8664-7ECEA3297D4F};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <PlatformFamilyName>WindowsCE</PlatformFamilyName>
+    <PlatformID>E2BECB1F-8C8C-41ba-B736-9BE7D946A398</PlatformID>
+    <OSVersion>5.0</OSVersion>
+    <MyType>WindowsForms</MyType>
+    <DeployDirSuffix>HRPDA</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <NativePlatformName>Windows CE</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>$(PlatformFamilyName)=TRUE</DefineConstants>
+    <DocumentationFile>HRPDA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>$(PlatformFamilyName)=TRUE</DefineConstants>
+    <DocumentationFile>HRPDA.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+    <FileAlignment>512</FileAlignment>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.SqlClient, Version=3.0.3600.0, Culture=neutral, PublicKeyToken=3be235df1c8d2ad3, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\DALUtility.vb" />
+    <Compile Include="Common\DbHelper.vb" />
+    <Compile Include="Common\Utility.vb" />
+    <Compile Include="FormConfig.Designer.vb">
+      <DependentUpon>FormConfig.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfig.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.vb">
+      <DependentUpon>FormMain.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.vb">
+      <DependentUpon>FormMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form入库菜单.Designer.vb">
+      <DependentUpon>Form入库菜单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form入库菜单.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form出库菜单.Designer.vb">
+      <DependentUpon>Form出库菜单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form出库菜单.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form盘点菜单.Designer.vb">
+      <DependentUpon>Form盘点菜单.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Form盘点菜单.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Model\M产成品入库申请.vb" />
+    <Compile Include="Model\M产成品出入库记录.vb" />
+    <Compile Include="Model\M产成品出库申请.vb" />
+    <Compile Include="Model\M产成品库存.vb" />
+    <Compile Include="Model\M产成品盘点.vb" />
+    <Compile Include="Model\M半成品入库申请.vb" />
+    <Compile Include="Model\M半成品出入库记录.vb" />
+    <Compile Include="Model\M半成品出库申请.vb" />
+    <Compile Include="Model\M半成品库存.vb" />
+    <Compile Include="Model\M半成品盘点.vb" />
+    <Compile Include="Model\M原材料入库申请.vb" />
+    <Compile Include="Model\M原材料出入库记录.vb" />
+    <Compile Include="Model\M原材料出库申请.vb" />
+    <Compile Include="Model\M原材料库存.vb" />
+    <Compile Include="Model\M原材料盘点.vb" />
+    <Compile Include="Model\M用户.vb" />
+    <Compile Include="产成品\F成品入库.Designer.vb">
+      <DependentUpon>F成品入库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产成品\F成品入库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产成品\F成品出库.Designer.vb">
+      <DependentUpon>F成品出库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产成品\F成品出库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="产成品\F成品盘点.Designer.vb">
+      <DependentUpon>F成品盘点.vb</DependentUpon>
+    </Compile>
+    <Compile Include="产成品\F成品盘点.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="半成品\F半成品入库.Designer.vb">
+      <DependentUpon>F半成品入库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="半成品\F半成品入库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="半成品\F半成品出库.Designer.vb">
+      <DependentUpon>F半成品出库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="半成品\F半成品出库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="半成品\F半成品盘点.Designer.vb">
+      <DependentUpon>F半成品盘点.vb</DependentUpon>
+    </Compile>
+    <Compile Include="半成品\F半成品盘点.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="原材料\F原材料入库.Designer.vb">
+      <DependentUpon>F原材料入库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="原材料\F原材料入库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Common\TCXml.vb" />
+    <Compile Include="原材料\F原材料出库.Designer.vb">
+      <DependentUpon>F原材料出库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="原材料\F原材料出库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="原材料\F原材料盘点.Designer.vb">
+      <DependentUpon>F原材料盘点.vb</DependentUpon>
+    </Compile>
+    <Compile Include="原材料\F原材料盘点.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="返回品\F返品入库.Designer.vb">
+      <DependentUpon>F返品入库.vb</DependentUpon>
+    </Compile>
+    <Compile Include="返回品\F返品入库.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormConfig.resx">
+      <DependentUpon>FormConfig.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form入库菜单.resx">
+      <DependentUpon>Form入库菜单.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form出库菜单.resx">
+      <DependentUpon>Form出库菜单.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form盘点菜单.resx">
+      <DependentUpon>Form盘点菜单.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产成品\F成品入库.resx">
+      <DependentUpon>F成品入库.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产成品\F成品出库.resx">
+      <DependentUpon>F成品出库.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="产成品\F成品盘点.resx">
+      <DependentUpon>F成品盘点.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="半成品\F半成品入库.resx">
+      <DependentUpon>F半成品入库.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="半成品\F半成品出库.resx">
+      <DependentUpon>F半成品出库.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="半成品\F半成品盘点.resx">
+      <DependentUpon>F半成品盘点.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原材料\F原材料入库.resx">
+      <DependentUpon>F原材料入库.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原材料\F原材料出库.resx">
+      <DependentUpon>F原材料出库.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="原材料\F原材料盘点.resx">
+      <DependentUpon>F原材料盘点.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="返回品\F返品入库.resx">
+      <DependentUpon>F返品入库.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Config.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.VisualBasic.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{F184B08F-C81C-45F6-A57F-5ABD9991F28F}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

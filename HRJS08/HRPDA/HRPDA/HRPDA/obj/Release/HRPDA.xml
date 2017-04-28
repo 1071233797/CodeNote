@@ -1,0 +1,37 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+HRPDA
+</name>
+</assembly>
+<members>
+<member name="M:HRPDA.TCXml.createXML(System.String)">
+	<summary>
+ 创建XML文件
+ </summary>
+	<param name="xmlFileName">要创建的XML文件名</param>
+	<remarks></remarks>
+</member><member name="M:HRPDA.TCXml.readXMl(System.String)">
+	<summary>
+ 读取xml
+ </summary>
+	<param name="xmlNodeName"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:HRPDA.My.Resources.Resources.ResourceManager">
+	<summary>
+   Returns the cached ResourceManager instance used by this class.
+</summary>
+</member><member name="P:HRPDA.My.Resources.Resources.Culture">
+	<summary>
+   Overrides the current thread's CurrentUICulture property for all
+   resource lookups using this strongly typed resource class.
+</summary>
+</member><member name="T:HRPDA.My.Resources.Resources">
+	<summary>
+   A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+</members>
+</doc>

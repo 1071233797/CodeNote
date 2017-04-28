@@ -1,0 +1,584 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+UserControl
+</name>
+</assembly>
+<members>
+<member name="M:UserControl.UCButton.PSb_Onclick">
+	<summary>
+ ボタンの事件を処理する
+ </summary>
+	<remarks>ボタンの事件を処理する</remarks>
+	<history>
+ 	[WANGXIN]	2010/01/24	Created
+ </history>
+</member><member name="P:UserControl.My.Resources.Resources.ResourceManager">
+	<summary>
+  返回此类使用的缓存 ResourceManager 实例。
+</summary>
+</member><member name="P:UserControl.My.Resources.Resources.Culture">
+	<summary>
+  为使用此强类型资源类的所有资源查找
+  重写当前线程的 CurrentUICulture 属性。
+</summary>
+</member><member name="T:UserControl.My.Resources.Resources">
+	<summary>
+  强类型资源类，用于查找本地化字符串等。
+</summary>
+</member><member name="M:UserControl.UCUtility.PFn_ToString(System.Object)">
+	<summary>
+ 文字列に変化する
+ </summary>
+	<param name="objValue">変化前に文字</param>
+	<returns>文字列</returns>
+	<remarks>文字列に変化する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_ToInteger(System.Object)">
+	<summary>
+ 整数を変化する
+ </summary>
+	<param name="objValue">数字オブジェクト</param>
+	<returns>整数</returns>
+	<remarks>整数を変化する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_ToLong(System.Object)">
+	<summary>
+ 長整数を変化する
+ </summary>
+	<param name="objValue">数字オブジェクト</param>
+	<returns>長整数</returns>
+	<remarks>長整数を変化する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_ToDouble(System.Object)">
+	<summary>
+ 整数を変化する
+ </summary>
+	<param name="objValue">数字オブジェクト</param>
+	<returns>整数</returns>
+	<remarks>整数を変化する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_ToDecimal(System.Object)">
+	<summary>
+ 整数を変化する
+ </summary>
+	<param name="objValue">数字オブジェクト</param>
+	<returns>整数</returns>
+	<remarks>整数を変化する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_ToDateTime(System.Object)">
+	<summary>
+ 時間を変化する
+ </summary>
+	<param name="objValue">時間文字列</param>
+	<returns>時間(yyyy/MM/dd hh:mm:ss)</returns>
+	<remarks>時間を変化する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_IsNothingOrNull(System.Object)">
+	<summary>
+ 「nothing」と「DBNull」を判断する
+ </summary>
+	<param name="objValue">判断対象</param>
+	<returns>true又はfalse</returns>
+	<remarks>「nothing」と「DBNull」を判断する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_IsNothingOrNullOrBlank(System.Object)">
+	<summary>
+ 「nothing」と「DBNull」を判断する
+ </summary>
+	<param name="objValue">判断対象</param>
+	<returns>true又はfalse</returns>
+	<remarks>「nothing」と「DBNull」を判断する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_IsNumber(System.Object)">
+	<summary>
+ 数字を判断する
+ </summary>
+	<param name="objValue">判断対象</param>
+	<returns>true又はfalse</returns>
+	<remarks>数字を判断する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_ToDecimalNull(System.Object)">
+	<summary>
+	</summary>
+	<param name="objValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:UserControl.UCUtility.PFn_ToDBNull(System.Object)">
+	<summary>
+	</summary>
+	<param name="objValue"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:UserControl.UCUtility.PFn_ToBoolean(System.Object)">
+	<summary>
+ 「nothing」と「DBNull」を変化する
+ </summary>
+	<param name="objValue">数字オブジェクト</param>
+	<returns>Boolean</returns>
+	<remarks>DBNullを変化する</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_IsRegex(System.String,System.String)">
+	<summary>
+ 正規表現の文字列について、正確性を戻る
+ </summary>
+	<param name="strRegex">正規表現の文字列</param>
+	<param name="strValue">判断の文字列</param>
+	<returns>true:正確  false:正確しない</returns>
+	<remarks>正規表現の文字列について、正確性を戻る</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_CheckAllEm(System.String)">
+	<summary>
+ 文字の全角をチェックする
+ </summary>
+	<param name="objValue">全角文字</param>
+	<returns>true:全角文字  false:全角文字がない</returns>
+	<remarks>文字の全角をチェックする</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_CheckHalfEm(System.String)">
+	<summary>
+ 文字の半角をチェックする
+ </summary>
+	<param name="objValue">半角文字</param>
+	<returns>true:半角文字  false:半角文字がない</returns>
+	<remarks>文字の半角をチェックする</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_CheckHalfEmHaihun(System.String)">
+	<summary>
+ 文字の半角をチェックする
+ </summary>
+	<param name="objValue">半角文字</param>
+	<returns>true:半角文字  false:半角文字がない</returns>
+	<remarks>文字の半角をチェックする</remarks>
+</member><member name="M:UserControl.UCUtility.PFn_CheckTel(System.String)">
+	<summary>
+ 電話番号をチェックする
+ </summary>
+	<param name="objValue">電話番号</param>
+	<returns>true又はfalse</returns>
+	<remarks>電話番号をチェックする</remarks>
+</member><member name="P:UserControl.UCGridEdit.ActiveFormFeatureCode">
+	<summary>
+ 当前フォームの機能コード
+ </summary>
+	<value>機能コード</value>
+	<returns>機能コード</returns>
+	<remarks>当前フォームの機能コード</remarks>
+</member><member name="P:UserControl.UCGridEdit.MasterFlg">
+	<summary>
+ グリッドマスタ系/業務系区分
+ </summary>
+	<value>区分</value>
+	<returns>マスタ系(True);業務系(False)</returns>
+	<remarks>グリッドマスタ系/業務系区分</remarks>
+</member><member name="P:UserControl.UCGridEdit.ItiranEditFlg">
+	<summary>
+ グリッド一覧/編集区分
+ </summary>
+	<value>区分</value>
+	<returns>一覧(True);編集(False)</returns>
+	<remarks>グリッド一覧/編集区分</remarks>
+</member><member name="P:UserControl.UCGridEdit.FirstFocusColumnIndex">
+	<summary>
+ 選択列番号をセットする
+ </summary>
+	<value>選択列番号</value>
+	<returns>選択列番号</returns>
+	<remarks>選択列番号をセットする</remarks>
+</member><member name="P:UserControl.UCGridEdit.MinRowHeight">
+	<summary>
+ 行高設定
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>行高設定</remarks>
+</member><member name="P:UserControl.UCGridEdit.MinHeaderHeight">
+	<summary>
+ 列頭高設定
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks>列頭高設定</remarks>
+</member><member name="P:UserControl.UCGridEdit.InsertValue">
+	<summary>
+ 入力前0埋め
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:UserControl.UCGridEdit.IsItiranCheckBoxFlag">
+	<summary>
+ 一覧CheckBox区分
+ </summary>
+	<value>区分</value>
+	<returns>存在(True);存在しません(False)</returns>
+	<remarks>グリッドマスタ系/業務系区分</remarks>
+</member><member name="P:UserControl.UCGridEdit.RowAppColor">
+	<summary>
+ 行の背景色は設けます
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:UserControl.UCGridEdit.RowAltAppColor">
+	<summary>
+ 行の背景色は設けます
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:UserControl.UCGridEdit.BackColorFlg">
+	<summary>
+ セルの背景色は設けます
+ </summary>
+	<value></value>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_BeforeEnterEditMode(System.Object,System.ComponentModel.CancelEventArgs)">
+	<summary>
+ 変更前値
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_AfterEnterEditMode(System.Object,System.EventArgs)">
+	<summary>
+ セル進入事件
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>セル進入事件</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_AfterExitEditMode(System.Object,System.EventArgs)">
+	<summary>
+ グリッドセルのメッセージを表示する
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>グリッドセルのメッセージを表示する</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_BeforeCellDeactivate(System.Object,System.ComponentModel.CancelEventArgs)">
+	<summary>
+ ロットプッカス時
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>ロットプッカス時</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_AfterRowInsert(System.Object,Infragistics.Win.UltraWinGrid.RowEventArgs)">
+	<summary>
+ 新規行のプッカスをセットする
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>新規行のプッカスをセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_Enter(System.Object,System.EventArgs)">
+	<summary>
+ 進入処理
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>進入処理</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_BeforeCellActivate(System.Object,Infragistics.Win.UltraWinGrid.CancelableCellEventArgs)">
+	<summary>
+ セル選択前処理
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>セル選択前処理</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_BeforeCellUpdate(System.Object,Infragistics.Win.UltraWinGrid.BeforeCellUpdateEventArgs)">
+	<summary>
+ セルの変更処理
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>セルの変更処理</remarks>
+	<history>
+ 	[WANGZHIFENG]	2010/03/05	Created
+ </history>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_AfterCellUpdate(System.Object,Infragistics.Win.UltraWinGrid.CellEventArgs)">
+	<summary>
+ セルの変更処理
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>セルの変更処理</remarks>
+	<history>
+ 	[WANGXIN]	2010/02/04	Created
+ </history>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_InitializeLayout(System.Object,Infragistics.Win.UltraWinGrid.InitializeLayoutEventArgs)">
+	<summary>
+ 初期の共通スタイルは設けます
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>初期の共通スタイルは設けます</remarks>
+	<history>
+ 	[WANGZHIFENG]	2010/01/24	Created
+ </history>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_InitializeRow(System.Object,Infragistics.Win.UltraWinGrid.InitializeRowEventArgs)">
+	<summary>
+ マイナスの値を赤字で表示する(行)
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>マイナスの値を赤字で表示する(行)</remarks>
+</member><member name="M:UserControl.UCGridEdit.Sb_SetCellColor(System.Int32,Infragistics.Win.UltraWinGrid.InitializeRowEventArgs)">
+	<summary>
+ セルの色をセットする
+ </summary>
+	<param name="intRowIndex"></param>
+	<param name="e"></param>
+	<remarks>セルの色をセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_CellChange(System.Object,Infragistics.Win.UltraWinGrid.CellEventArgs)">
+	<summary>
+ マイナスの値を赤字で表示する
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>マイナスの値を赤字で表示する</remarks>
+	<history>
+ 	[WANGZHIFENG]	2010/01/28	Created
+ </history>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_KeyDown(System.Object,System.Windows.Forms.KeyEventArgs)">
+	<summary>
+ キー事件処理
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>キー事件処理</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_CellDataError(System.Object,Infragistics.Win.UltraWinGrid.CellDataErrorEventArgs)">
+	<summary>
+ セルのエラー処理
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>セルのエラー処理</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_Leave(System.Object,System.EventArgs)">
+	<summary>
+ 「Leave」事件処理
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks>「Leave」事件処理</remarks>
+</member><member name="M:UserControl.UCGridEdit.OnAfterCellUpdate(Infragistics.Win.UltraWinGrid.CellEventArgs)">
+	<summary>
+ 重写「Validating」事件処理
+ </summary>
+	<param name="e"></param>
+	<remarks>重写「Validating」事件処理</remarks>
+</member><member name="M:UserControl.UCGridEdit.CtlGrid_KeyPress(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+	<summary>
+ 入力項目をチェックする
+ </summary>
+	<param name="sender"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetEntryFocus">
+	<summary>
+ 登録処理後グリッドの焦点設置(廃棄)
+ </summary>
+	<remarks>登録処理後グリッドの焦点設置(廃棄)</remarks>
+	<history>
+ 	[WANGZHIFENG]	2010/01/24	Created
+ </history>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetItiranFocus(System.Int32,System.Int32)">
+	<summary>
+ 一覧グリッドの焦点設置
+ </summary>
+	<param name="intCellRowIndex">行番号</param>
+	<param name="intCellColumnIndex">列番号</param>
+	<remarks>一覧グリッドの焦点設置</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetCellFocus(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ グリッドのフォーカスをセットする(外部)
+ </summary>
+	<param name="intCellRowIndex">行番号</param>
+	<param name="intCellColumnIndex">列番号</param>
+	<param name="intBandIndex">バンド番号</param>
+	<param name="intChildCellRowIndex">子バンド行番号</param>
+	<param name="intChildChildCellRowIndex">子の子バンド行番号</param>
+	<remarks>グリッドのフォーカスをセットする(外部)</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetCellFocus(System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ グリッドのフォーカスをセットする(外部)
+ </summary>
+	<param name="intCellRowIndex">行番号</param>
+	<param name="strColKey">列名</param>
+	<param name="intBandIndex">バンド番号</param>
+	<param name="intChildCellRowIndex">子バンド行番号</param>
+	<param name="intChildChildCellRowIndex">子の子バンド行番号</param>
+	<remarks>グリッドのフォーカスをセットする(外部)</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetCellButtonFocus(Infragistics.Win.UltraWinGrid.CellEventArgs)">
+	<summary>
+ セルのボタンをクリックする時、プッカスをセットする
+ </summary>
+	<param name="e">当前操作セル</param>
+	<remarks>セルのボタンをクリックする時、プッカスをセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetUpdateCellFocus(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ グリッド既時チッェクした、プッカスの設置関数(内部)
+ </summary>
+	<param name="intCellRowIndex">行番号</param>
+	<param name="intColIndex">列番号</param>
+	<param name="intBandIndex">バード番号</param>
+	<param name="intChildCellRowIndex">子層行番号</param>
+	<param name="intChildChildCellRowIndex">子の子バンド行番号</param>
+	<remarks>グリッド既時チッェクした、プッカスの設置関数(内部)</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetUpdateCellFocus(System.Int32,System.String,System.Int32,System.Int32,System.Int32)">
+	<summary>
+ グリッド既時チッェクした、プッカスの設置関数(内部)
+ </summary>
+	<param name="intCellRowIndex">行番号</param>
+	<param name="strColKey">列キー</param>
+	<param name="intBandIndex">バード番号</param>
+	<param name="intChildCellRowIndex">子層行番号</param>
+	<param name="intChildChildCellRowIndex">子の子バンド行番号</param>
+	<remarks>グリッド既時チッェクした、プッカスの設置関数(内部)</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetRowFontRed(System.Int32)">
+	<summary>
+ グリッドの文字色をセットする
+ </summary>
+	<param name="intRowsindex">行番号</param>
+	<remarks>グリッドの文字色をセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetRowNumberColor(Infragistics.Win.UltraWinGrid.CellEventArgs)">
+	<summary>
+ 数値の文字色を「赤色」に変更する
+ </summary>
+	<param name="e">当前セル</param>
+	<remarks>数値の文字色を「赤色」に変更する</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_GetHeadWith(System.Int64[]@,System.Boolean)">
+	<summary>
+ グリッドの寛を取得する(多グリッド)
+ </summary>
+	<param name="blnOneHead">False:多グリッド存在</param>
+	<remarks>グリッドの寛を取得する</remarks>
+	<history>
+ 	[WANGZHIFENG]	2010/01/24	Created
+ </history>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetHeadWith(System.Int64[],System.Boolean)">
+	<summary>
+ グリッドのコラムの寛さを設定する(多グリッド)
+ </summary>
+	<param name="lngGridWith">グリッドの寛さ</param>
+	<param name="blnOneHead">False:多グリッド存在</param>
+	<remarks>グリッドのコラムの寛さを設定する</remarks>
+	<history>
+ 	[WANGZHIFENG]	2010/01/24	Created
+ </history>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetGridNumberDigits(System.Int32,System.Int32[],System.String)">
+	<summary>
+ 小数桁数をセットする(整列)
+ </summary>
+	<param name="intBandIndex">パッド番号</param>
+	<param name="intColIndex">列番号</param>
+	<param name="strMaskInput">MaskInput</param>
+	<remarks>小数桁数をセットする(整列)</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetGridNumberDigits(System.Int32,System.String[],System.String)">
+	<summary>
+ 小数桁数をセットする(整列)
+ </summary>
+	<param name="intBandIndex">パッド番号</param>
+	<param name="strColKey">列キー</param>
+	<param name="strMaskInput">MaskInput</param>
+	<remarks>小数桁数をセットする(整列)</remarks>
+</member><member name="M:UserControl.UCGridEdit.PFn_GetEditorsValueList(System.Int32,System.Int32,System.Boolean)">
+	<summary>
+ 各端数小数単位のMaskInputをセットする(セル)
+ </summary>
+	<param name="intDecimal">各端数小数単位</param>
+	<param name="intCount">小数点前位数</param>
+	<param name="bolReadOnly">ReadOnly</param>
+	<returns>各端数小数単位のMaskInput</returns>
+	<remarks>各端数小数単位のMaskInputをセットする(セル)</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_CellUpdateMessage(System.String,System.String,System.String,System.String)">
+	<summary>
+ メッセージを表示する(グリッド内、既時メッセージ用)
+ </summary>
+	<param name="strMsgID">メッセージコード</param>
+	<param name="strMsgItem1">引数1</param>
+	<param name="strMsgItem2">引数2</param>
+	<param name="strMsgItem3">引数3</param>
+	<remarks>メッセージを表示する(グリッド内、既時メッセージ用)</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetRowOnEnable(Infragistics.Win.UltraWinGrid.UltraGridRow,Infragistics.Win.UltraWinGrid.Activation)">
+	<summary>
+ 照会行をセットする
+ </summary>
+	<param name="objRow">行</param>
+	<param name="objActivation">状態</param>
+	<remarks>入力行は照会行へセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetCellEnable(Infragistics.Win.UltraWinGrid.UltraGridCell,Infragistics.Win.UltraWinGrid.Activation)">
+	<summary>
+ セルの使用をセットする
+ </summary>
+	<param name="objCell">せる</param>
+	<param name="objActivation">状態</param>
+	<remarks>セルの使用をセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.PFn_CheckGridShiftTab(System.Windows.Forms.KeyEventArgs@)">
+	<summary>
+ グリッドの「SHIFT + TAB」をセットする
+ </summary>
+	<param name="e">キー</param>
+	<returns>true:正常順  false:プッカスをセット</returns>
+	<remarks>グリッドの「SHIFT + TAB」をセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetCellOnEnable(System.Int32,System.Int32,System.Int32,Infragistics.Win.UltraWinGrid.Activation)">
+	<summary>
+ 照会Cellをセットする
+ </summary>
+	<param name="intColIndexF">列番号(From)</param>
+	<param name="intColIndexT">列番号(To)</param>
+	<param name="intBandIndex">層番号</param>
+	<param name="objActivation">アクティベート</param>
+	<remarks>入力Cellは照会Cellへセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetRowCellOnEnable(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,Infragistics.Win.UltraWinGrid.Activation,System.Int32)">
+	<summary>
+ 照会Cellをセットする
+ </summary>
+	<param name="intRowIndex">行番号</param>
+	<param name="intColIndexF">列番号(From)</param>
+	<param name="intColIndexT">列番号(To)</param>
+	<param name="intBandIndex">層番号</param>
+	<param name="intChildRowIndex">子行番号</param>
+	<param name="objActivation">アクティベート</param>
+	<remarks>入力Cellは照会Cellへセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.CodeValidating(System.Int32,System.String,System.String)">
+	<summary>
+ 「CodeComboBox」コードについて、マスタを検索する
+ </summary>
+	<param name="rowIndex">行のIndex番号</param>
+	<param name="codeKey">コード列キー</param>
+	<param name="nameKey">名前列キー</param>
+	<remarks>「CodeComboBox」コードについて、マスタを検索する</remarks>
+</member><member name="M:UserControl.UCGridEdit.SetCodeComboBoxCode(System.Int32,System.String,System.String)">
+	<summary>
+ 「CodeComboBox」名より、コードをセット
+ </summary>
+	<param name="rowIndex">行のIndex番号</param>
+	<param name="codeKey">コード列キー</param>
+	<param name="nameKey">名前列キー</param>
+	<remarks>「CodeComboBox」名より、コードをセット</remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetCellBackColor">
+	<summary>
+ Grid背景色を設定する
+ </summary>
+	<remarks></remarks>
+</member><member name="M:UserControl.UCGridEdit.PSb_SetCellBackColor(System.Int32,System.Drawing.Color)">
+	<summary>
+ Grid背景色を設定する
+ </summary>
+	<param name="intBands">バグ</param>
+	<param name="ClrBcakColor">背景色</param>
+	<remarks></remarks>
+</member><member name="M:UserControl.UCGridEdit.EnterEditModeOnFirstCellInGrid">
+	<summary>
+ グリッドのフォーカスをセットする(新規行入力時用)
+ </summary>
+	<remarks>グリッドのフォーカスをセットする(新規行入力時用)</remarks>
+</member><member name="M:UserControl.UCGridEdit.SetEnterEditMode">
+	<summary>
+ プッカスをセットする
+ </summary>
+	<remarks>プッカスをセットする</remarks>
+</member><member name="M:UserControl.UCGridEdit.SetInsertValue(System.String[],System.Int32,Infragistics.Win.UltraWinGrid.CellEventArgs)">
+	<summary>
+ 入力前0埋め
+ </summary>
+	<param name="strColumns"></param>
+	<param name="intBand"></param>
+	<param name="e"></param>
+	<remarks></remarks>
+</member><member name="P:UserControl.UCCombo.TabStop">
+	<summary>
+ 読むのみプロパティをセットする
+ </summary>
+	<value>true:入力不可 false:入力可</value>
+	<returns>true:入力不可 false:入力可</returns>
+	<remarks>読むのみプロパティをセットする</remarks>
+</member>
+</members>
+</doc>

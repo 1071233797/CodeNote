@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <HostIP>192.168.0.103</HostIP>
+  <HostPort>7493</HostPort>
+  <IsLogin>1</IsLogin>
+</Config>
